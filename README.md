@@ -31,7 +31,6 @@ Things you may want to cover:
 |name|string|null: false,|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
-|group_id|string|null: false, foreign_key|
 
 ### Association
 - has_many :chats
@@ -57,10 +56,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
+|name|string|null: false|
 
 ### Association
 - has_many :chats
 - has_many :users_groups
+- has_many :users, through: :users_groups
 
 ## Users_Groups テーブル
 
