@@ -15,10 +15,32 @@
   text-align: -webkit-match-parent;
 }
 
+.flach-box {
+  color: $white;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: center;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  columns: #000;
+  background: #fff;
+}
+
+head {
+  display: none;
+}
+
 .wrapper {
   .chat-side {
     width: 300px;
-    color: white;
+    color: $white;
     float: left;
     .side-header {
       background-color: #253141;
@@ -88,17 +110,17 @@
         }
       }
       a:visited {
-        color: #38aef0;
+        color: $skyblue;
       }
       a {
-        color: #38aef0;
+        color: $skyblue;
       }
       &__edit-btn {
         height: 40px;
         line-height: 40px;
         padding: 0 20px;
         margin-top: 30px;
-        border: solid 1px #38aef0;
+        border: solid 1px $skyblue;
         position: absolute;
         right: 40px;
       }
@@ -114,7 +136,7 @@
           display: flex;
           margin-bottom: 10px;
           &__talker {
-            color: #434a54;
+            color: $grey;
             font-size: 16px;
             font-weight: bold;
           }
@@ -125,7 +147,7 @@
           }
         }
         &__text {
-          color: #434a54;
+          color: $grey;
           font-size: 14px;
           margin-bottom: 10px;
         }
@@ -144,7 +166,7 @@
             height: 50px;
             width: 100%;
             padding: 0 40px 0 10px;
-            color: #434a54;
+            color: $grey;
             border-style: none;
           }
           &__image {
@@ -164,8 +186,8 @@
           height: 50px;
           padding: 0 30px;
           margin-left: 15px;
-          background-color: #38aef0;
-          color: white;
+          background-color: $skyblue;
+          color: $white;
           cursor: pointer;
         }
       }
@@ -174,7 +196,7 @@
 }
 
 .chat-side a {
-  color: white;
+  color: $white;
 }
 a {
   text-decoration: none;
