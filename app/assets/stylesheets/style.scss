@@ -2,20 +2,13 @@
   box-sizing: border-box;
 }
 
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
 
 .li {
   display: list-item;
   text-align: -webkit-match-parent;
 }
 
-.flach-box {
+.flash-box {
   color: $white;
   font-size: 1rem;
   font-weight: lighter;
@@ -38,30 +31,30 @@ head {
 }
 
 .wrapper {
-  .chat-side {
+  .side_bar {
     width: 300px;
     color: $white;
     float: left;
-    .side-header {
+    .header {
       background-color: #253141;
       height: 100px;
       display: flex;
       align-items: center;
       padding: 0 20px;
-      &__box {
+      .header__name {
         display: flex;
         justify-content: space-between;
         width: 100%;
         font-weight: bold;
-        &__menu {
-          display: flex;
-          &__new-group {
-            margin-left: 0.3rem;
-            
-
-          }
+        
+      }
+      ul.header__lists {
+        display: flex;
+        li.list {
+          margin-left: 0.3rem;
         }
       }
+      
 
     }
     .groups {
@@ -195,7 +188,7 @@ head {
   }
 }
 
-.chat-side a {
+.side_bar a {
   color: $white;
 }
 a {
