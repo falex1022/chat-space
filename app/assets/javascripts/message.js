@@ -1,19 +1,18 @@
 $(function(){
   function buildPost(message){
-    var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var img = message.image.url ? `<img src= ${ message.image.url }>` : "";
     var html =  `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
                     <p class="upper-message__user-name">
                       ${message.user_name}
                     </p>
                     <p class="upper-message__date">
-                      ${message.date}
+                      ${message.created_at}
                     </p>
                   </div>
                   <p class="lower-message">
                     <div class="lower-message__content">
-                    ${content}
+                    ${message.content}
                     </div>
                     <div class="lower-message__image">
                     ${img}
@@ -46,5 +45,30 @@ $(function(){
     .always(function(){
       $('.form__submit').attr('disabled', false);
     })
-  });
+  })
+  var reloadMessages = function(){
+      var href = 'api/messages'
+      var last_message_id = $('.message').last().data('id');
+      $.ajax({
+        url: href,
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages){
+        var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildPost(message);
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        });
+      })
+      .fail(function(){
+        alert("メッセージ送信に失敗しました");
+      });
+  };
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+  // setInterval(reloadMessages, 5000);
+  }
 });
+
