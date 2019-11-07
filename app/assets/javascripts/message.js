@@ -64,10 +64,11 @@ $(function(){
         });
       })
       .fail(function(){
+        alert("メッセージ送信に失敗しました");
       });
   };
   if (window.location.href.match(/\/groups\/\d+\/messages/)){
-  setInterval(reloadMessages, 5000);
+  // setInterval(reloadMessages, 5000);
   }
 });
 
